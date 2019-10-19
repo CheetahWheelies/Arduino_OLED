@@ -74,8 +74,8 @@ void setup() {
 }
 
 void loop() {
-  Screen1();
-  //Screen2();
+  //Screen1();
+  Screen2();
 }
 
 void Screen2()
@@ -85,7 +85,7 @@ void Screen2()
   display.println(F("Text Size 1"));
 
   display.setTextSize(2);
-  display.println(F("Size 2"));
+  display.println(F("12.345.678"));
 
   display.setTextSize(3);
   display.println(F("Size 3"));
