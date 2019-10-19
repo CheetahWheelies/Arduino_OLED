@@ -29,7 +29,7 @@
 #define OLED_CLK   10
 #define OLED_DC    11
 #define OLED_CS    12
-#define OLED_RESET 13
+#define OLED_RESET 8
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT,
   OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 
@@ -53,7 +53,13 @@ static unsigned long _uptimeSeconds = 0;
  
 
 void setup() {
+  // Init Serial Monitor.
   Serial.begin(9600);
+
+  // Turn onboard LED off.
+  pinMode(13, OUTPUT);
+  digitalWrite(13, LOW);
+  
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if(!display.begin(SSD1306_SWITCHCAPVCC)) {
@@ -68,8 +74,8 @@ void setup() {
 }
 
 void loop() {
-  //Screen1();
-  Screen2();
+  Screen1();
+  //Screen2();
 }
 
 void Screen2()
