@@ -54,12 +54,11 @@ static unsigned long _uptimeSeconds = 0;
 
 void setup() {
   // Init Serial Monitor.
-  Serial.begin(9600);
+  //Serial.begin(9600); Serial.println("Up");
 
   // Turn onboard LED off.
   pinMode(13, OUTPUT);
-  digitalWrite(13, LOW);
-  
+  digitalWrite(13, LOW); 
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if(!display.begin(SSD1306_SWITCHCAPVCC)) {
@@ -74,8 +73,8 @@ void setup() {
 }
 
 void loop() {
-  //Screen1();
-  Screen2();
+  Screen1();
+  //Screen2();
 }
 
 void Screen2()
